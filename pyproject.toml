@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jfinance"
+version = "0.3.0"
+description = "Japanese EDINET disclosure data with a yfinance-compatible API"
+readme = "README.md"
+license = "Apache-2.0"
+# NOTICE に「本文書を一体で同梱している」と書いているので、**wheel にも入れる**。
+# 金融庁「EDINETタクソノミの知的所有権について」の条件（licenses/README を参照）
+license-files = ["LICENSE", "NOTICE", "licenses/EDINET_Taxonomy_Legal_Statement.txt"]
+requires-python = ">=3.9"
+authors = [{ name = "jfinance contributors" }]
+keywords = ["edinet", "yfinance", "japan", "finance", "financial-statements", "xbrl"]
+dependencies = ["pandas>=1.5", "numpy>=1.16.5", "requests>=2.31", "pytz>=2022.5"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Natural Language :: English",
+    "Natural Language :: Japanese",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+
+[project.optional-dependencies]
+# 入っていれば使う（yfinance と同じ）。無ければ requests で通信する
+curl = ["curl_cffi>=0.15"]
+# 互換テストで「正解の形」を作るときと、tools/vendor_yfinance.py でコピーを作り直すときだけ使う。
+# jfinance 本体は yfinance を import しない（コピーしたソースを持つ）
+compat-test = ["yfinance==1.5.2", "curl_cffi>=0.15"]
+
+[project.urls]
+Homepage = "https://github.com/sgawa/jfinance"
+Documentation = "https://github.com/sgawa/jfinance/blob/main/docs/index.md"
+Issues = "https://github.com/sgawa/jfinance/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]

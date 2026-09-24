@@ -1,0 +1,27 @@
+EDINETタクソノミの知的所有権について（「本文書」）
+著作権
+「EDINETタクソノミ」は、金融商品取引法に基づく有価証券報告書等の開示書類に関する電子開示システム（EDINET）に開示書類をXBRL形式により電子的に提出するために金融庁が開発したものであり、著作権の対象となっています。当該著作権は日本国著作権法及び国際条約により保護されています。
+なお、金融庁の事前の許可なくEDINETタクソノミの全部又は一部について改変、修正又は翻訳を行うことはできません。EDINETタクソノミには、XBRL International Inc.（以下「XII」という。）の著作権に帰属する内容が一部含まれており、当該内容は、XIIの許諾に基づきEDINETタクソノミ中に作成されています。
+本文書を一体とし、かつ、次の文言を用いて出所を明示することを条件に、EDINETタクソノミの全部又は一部の引用、転載、複製、譲渡、貸与、公衆送信又は配布を行うことができます：
+© Copyright 2014 Financial Services Agency, The Japanese Government
+保証責任の否認
+EDINETタクソノミは、「現状有姿」にて提供され、金融庁及びXIIは、明示的であるか暗黙的であるかを問わず、商業利用への適合性、特定目的への適合性若しくは所有権の保証又はEDINETタクソノミの使用が第三者の特許権、著作権、トレードマークその他の権利を侵害しないことの保証その他のあらゆる保証の責任を否認します。
+免責事項
+契約、不法行為、保証その他の方法であるかを問わず、EDINETタクソノミ若しくはその関連ファイルを使用すること、又はいかなる種類の内容物の動作若しくは導入により発生する、代替品若しくは代替サービスの調達費用又は逸失利益又は使用の喪失又はデータの喪失又は直接、間接、結果的、偶発的、懲罰的若しくは特別の損害について、当該損害の可能性についての事前の通知の有無にかかわらず、金融庁及びXIIは、いかなる利用者又は第三者に対しても責任を負いません。
+使用許諾
+上記の条件を承諾し、かつ、XIIの知的財産権ポリシー（
+www.xbrl.org/legal
+）に準拠して使用する場合に限り、EDINETタクソノミを無償で使用することを許諾します。
+EDINET Taxonomy Legal Statement (“the Statement”)
+Copyright
+EDINET Taxonomy is developed and owned by Financial Services Agency, The Japanese Government (“JFSA” hereinafter) for the purpose of submitting disclosure documents in XBRL format to EDINET System (Electronic Disclosure for Investors’ NETwork). EDINET Taxonomy is protected under the Copyright Law of Japan and under relevant international treaties. You are not permitted, without the prior consent of JFSA, to alter, modify or translate the whole or any part of EDINET Taxonomy and its related documents.
+Copyright in some of the content available in EDINET Taxonomy belongs to XBRL International, Inc., and such content has been produced in EDINET Taxonomy with the permission of XBRL International, Inc. JFSA grants you to quote, reproduce, copy, assign, lend, publicly transmit or distribute the whole or a part of EDINET Taxonomy only if you combine the Statement and indicate its origin:
+© Copyright 2014 Financial Services Agency, The Japanese Government
+WARRANTY DISCLAIMER
+EDINET TAXONOMY IS PROVIDED "AS IS", AND JFSA AND XBRL INTERNATIONAL, INC. DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, ANY WARRANTY OF MERCHANTABILITY, FITNESS FOR ANY PARTICULAR PURPOSE, OR TITLE; OR ANY WARRANTY THAT THE USE OF EDINET TAXONOMY WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
+LIMITATION OF LIABILITY
+IN NO EVENT WILL JFSA OR XBRL INTERNATIONAL INC. BE LIABLE TO ANY USER OR ANY THIRD PARTY FOR THE COST OF PROCURING SUBSTITUTE GOODS OR SERVICES, LOST PROFITS, LOSS OF USE, LOSS OF DATA OR ANY DIRECT, INDIRECT, CONSEQUENTIAL, INCIDENTAL, PUNITIVE OR SPECIAL DAMAGES, WHETHER UNDER CONTRACT, TORT, WARRANTY OR OTHERWISE, ARISING IN ANY WAY OUT OF THE USE OF EDINET TAXONOMY OR ITS ASSOCIATED FILES, OR THE PERFORMANCE OR IMPLEMENTATION OF THE CONTENTS THEREOF OF ANY TYPE WHATSOEVER, WHETHER OR NOT SUCH PARTY HAD ADVANCE NOTICE OF THE POSSIBILITY OF SUCH DAMAGES.
+Grant of License
+EDINET Taxonomy is provided for use without license fees or similar restrictions provided you agree upon the terms and conditions of the Statement and only if EDINET Taxonomy is used in accordance with the Intellectual Property policy of XBRL International Inc. (
+www.xbrl.org/legal
+)

@@ -1,0 +1,1436 @@
+{
+ "yfinance_version": "1.5.2",
+ "top_level": {
+  "download": {
+   "kind": "function",
+   "params": [
+    "tickers",
+    "start",
+    "end",
+    "actions",
+    "threads",
+    "ignore_tz",
+    "group_by",
+    "auto_adjust",
+    "back_adjust",
+    "repair",
+    "keepna",
+    "progress",
+    "period",
+    "interval",
+    "prepost",
+    "rounding",
+    "timeout",
+    "session",
+    "multi_level_index"
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "Market": {
+   "kind": "class",
+   "params": [
+    "market",
+    "session",
+    "timeout"
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "MarketRegion": {
+   "kind": "class",
+   "params": [
+    "args",
+    "kwds"
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "Search": {
+   "kind": "class",
+   "params": [
+    "query",
+    "max_results",
+    "news_count",
+    "lists_count",
+    "include_cb",
+    "include_nav_links",
+    "include_research",
+    "include_cultural_assets",
+    "enable_fuzzy_query",
+    "recommended",
+    "session",
+    "timeout",
+    "raise_errors"
+   ],
+   "jf": "yahoo"
+  },
+  "Lookup": {
+   "kind": "class",
+   "params": [
+    "query",
+    "session",
+    "timeout",
+    "raise_errors"
+   ],
+   "jf": "yahoo"
+  },
+  "Ticker": {
+   "kind": "class",
+   "params": [
+    "ticker",
+    "session"
+   ],
+   "jf": "yahoo"
+  },
+  "Tickers": {
+   "kind": "class",
+   "params": [
+    "tickers",
+    "session"
+   ],
+   "jf": "yahoo"
+  },
+  "enable_debug_mode": {
+   "kind": "function",
+   "params": [],
+   "jf": "yahoo"
+  },
+  "set_tz_cache_location": {
+   "kind": "function",
+   "params": [
+    "cache_dir"
+   ],
+   "jf": "absent",
+   "reason": "タイムゾーンを保存しない（常に Asia/Tokyo）"
+  },
+  "Sector": {
+   "kind": "class",
+   "params": [
+    "key",
+    "session",
+    "region"
+   ],
+   "jf": "absent",
+   "reason": "Yahoo の業種分類（東証の業種は独自の JpSector ）"
+  },
+  "Industry": {
+   "kind": "class",
+   "params": [
+    "key",
+    "session",
+    "region"
+   ],
+   "jf": "absent",
+   "reason": "Yahoo の業種分類（東証の業種は独自の JpIndustry ）"
+  },
+  "WebSocket": {
+   "kind": "class",
+   "params": [
+    "url",
+    "verbose"
+   ],
+   "jf": "absent",
+   "reason": "リアルタイムの株価（EDINET に無い）"
+  },
+  "AsyncWebSocket": {
+   "kind": "class",
+   "params": [
+    "url",
+    "verbose"
+   ],
+   "jf": "absent",
+   "reason": "リアルタイムの株価（EDINET に無い）"
+  },
+  "Calendars": {
+   "kind": "class",
+   "params": [
+    "start",
+    "end",
+    "session"
+   ],
+   "jf": "absent",
+   "reason": "決算発表・IPO・経済指標の予定（EDINET にあるのは提出の実績 → 独自の FilingCalendar ）"
+  },
+  "Auth": {
+   "kind": "class",
+   "params": [
+    "session"
+   ],
+   "jf": "absent",
+   "reason": "Yahoo のログイン"
+  },
+  "EquityQuery": {
+   "kind": "class",
+   "params": [
+    "operator",
+    "operand"
+   ],
+   "jf": "absent",
+   "reason": "同上（独自の EdinetQuery ）"
+  },
+  "FundQuery": {
+   "kind": "class",
+   "params": [
+    "operator",
+    "operand"
+   ],
+   "jf": "absent",
+   "reason": "同上"
+  },
+  "ETFQuery": {
+   "kind": "class",
+   "params": [
+    "operator",
+    "operand"
+   ],
+   "jf": "absent",
+   "reason": "同上"
+  },
+  "screen": {
+   "kind": "function",
+   "params": [
+    "query",
+    "offset",
+    "size",
+    "count",
+    "sortField",
+    "sortAsc",
+    "userId",
+    "userIdType",
+    "session"
+   ],
+   "jf": "absent",
+   "reason": "Yahoo のスクリーナー（EDINET の項目では独自の edinet_screen ）"
+  },
+  "PREDEFINED_SCREENER_QUERIES": {
+   "kind": "dict",
+   "jf": "absent",
+   "reason": "同上"
+  },
+  "config": {
+   "kind": "ConfigMgr",
+   "jf": "yahoo"
+  },
+  "set_config": {
+   "kind": "function",
+   "params": [
+    "proxy",
+    "retries"
+   ],
+   "jf": "yahoo"
+  }
+ },
+ "Ticker": {
+  "actions": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "analyst_price_targets": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "balance_sheet": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "balancesheet": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "calendar": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "決算発表の予定・予想（EDINET に無い。有報の提出日は独自の report_filing_dates ）"
+  },
+  "capital_gains": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "cash_flow": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "cashflow": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "dividends": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "earnings": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "Yahoo でも非推奨（常に None）。EPS の実績は income_stmt の Basic EPS"
+  },
+  "earnings_dates": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "決算発表の予定・予想（EDINET に無い。有報の提出日は独自の report_filing_dates ）"
+  },
+  "earnings_estimate": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "earnings_history": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "eps_revisions": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "eps_trend": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "fast_info": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "financials": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "funds_data": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "get_actions": {
+   "kind": "method",
+   "params": [
+    [
+     "period",
+     "'max'"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "get_analyst_price_targets": {
+   "kind": "method",
+   "params": [],
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "get_balance_sheet": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ],
+    [
+     "pretty",
+     "False"
+    ],
+    [
+     "freq",
+     "'yearly'"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_balancesheet": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ],
+    [
+     "pretty",
+     "False"
+    ],
+    [
+     "freq",
+     "'yearly'"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_calendar": {
+   "kind": "method",
+   "params": [],
+   "jf": "absent",
+   "reason": "決算発表の予定・予想（EDINET に無い。有報の提出日は独自の report_filing_dates ）"
+  },
+  "get_capital_gains": {
+   "kind": "method",
+   "params": [
+    [
+     "period",
+     "'max'"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "get_cash_flow": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ],
+    [
+     "pretty",
+     "False"
+    ],
+    [
+     "freq",
+     "'yearly'"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_cashflow": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ],
+    [
+     "pretty",
+     "False"
+    ],
+    [
+     "freq",
+     "'yearly'"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_dividends": {
+   "kind": "method",
+   "params": [
+    [
+     "period",
+     "'max'"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "get_earnings": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ],
+    [
+     "freq",
+     "'yearly'"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "Yahoo でも非推奨（常に None）。EPS の実績は income_stmt の Basic EPS"
+  },
+  "get_earnings_dates": {
+   "kind": "method",
+   "params": [
+    [
+     "limit",
+     "12"
+    ],
+    [
+     "offset",
+     "0"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "決算発表の予定・予想（EDINET に無い。有報の提出日は独自の report_filing_dates ）"
+  },
+  "get_earnings_estimate": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "get_earnings_history": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "get_eps_revisions": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "get_eps_trend": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "get_fast_info": {
+   "kind": "method",
+   "params": [],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "get_financials": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ],
+    [
+     "pretty",
+     "False"
+    ],
+    [
+     "freq",
+     "'yearly'"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_funds_data": {
+   "kind": "method",
+   "params": [],
+   "jf": "yahoo"
+  },
+  "get_growth_estimates": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "get_history_metadata": {
+   "kind": "method",
+   "params": [
+    [
+     "repair",
+     "<sentinel>"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "get_income_stmt": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ],
+    [
+     "pretty",
+     "False"
+    ],
+    [
+     "freq",
+     "'yearly'"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_incomestmt": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ],
+    [
+     "pretty",
+     "False"
+    ],
+    [
+     "freq",
+     "'yearly'"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_info": {
+   "kind": "method",
+   "params": [],
+   "jf": "yahoo"
+  },
+  "get_insider_purchases": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "役員の売買の集計（EDINET に無い。大量保有報告書の売買の集計は独自の large_holder_activity）"
+  },
+  "get_insider_roster_holders": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_insider_transactions": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "役員の売買（EDINET に無い。大量保有報告書の売買は独自の large_holder_transactions）"
+  },
+  "get_institutional_holders": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_isin": {
+   "kind": "method",
+   "params": [],
+   "jf": "yahoo"
+  },
+  "get_major_holders": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_mutualfund_holders": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "投資信託の保有（EDINET に無い。大量保有報告書の保有者は独自の large_holders）"
+  },
+  "get_news": {
+   "kind": "method",
+   "params": [
+    [
+     "count",
+     "10"
+    ],
+    [
+     "tab",
+     "'news'"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "報道記事（EDINET に無い。提出書類は sec_filings）"
+  },
+  "get_recommendations": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "get_recommendations_summary": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "get_revenue_estimate": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "get_sec_filings": {
+   "kind": "method",
+   "params": [],
+   "jf": "yahoo"
+  },
+  "get_shares": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_shares_full": {
+   "kind": "method",
+   "params": [
+    [
+     "start",
+     "None"
+    ],
+    [
+     "end",
+     "None"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_splits": {
+   "kind": "method",
+   "params": [
+    [
+     "period",
+     "'max'"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "get_sustainability": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "ESG スコア（EDINET に無い。温室効果ガスの排出量は独自の emissions ）"
+  },
+  "get_upgrades_downgrades": {
+   "kind": "method",
+   "params": [
+    [
+     "as_dict",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "get_valuation_measures": {
+   "kind": "method",
+   "params": [
+    [
+     "freq",
+     "'quarterly'"
+    ],
+    [
+     "periods",
+     "5"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "growth_estimates": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "history": {
+   "kind": "method",
+   "params": [
+    [
+     "period",
+     "'1mo if start & end None'"
+    ],
+    [
+     "interval",
+     "'1d'"
+    ],
+    [
+     "start",
+     "None"
+    ],
+    [
+     "end",
+     "None"
+    ],
+    [
+     "prepost",
+     "False"
+    ],
+    [
+     "actions",
+     "True"
+    ],
+    [
+     "auto_adjust",
+     "True"
+    ],
+    [
+     "back_adjust",
+     "False"
+    ],
+    [
+     "repair",
+     "False"
+    ],
+    [
+     "keepna",
+     "False"
+    ],
+    [
+     "rounding",
+     "False"
+    ],
+    [
+     "timeout",
+     "10"
+    ],
+    [
+     "raise_errors",
+     "False"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "history_metadata": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "income_stmt": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "incomestmt": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "info": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "insider_purchases": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "役員の売買の集計（EDINET に無い。大量保有報告書の売買の集計は独自の large_holder_activity）"
+  },
+  "insider_roster_holders": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "insider_transactions": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "役員の売買（EDINET に無い。大量保有報告書の売買は独自の large_holder_transactions）"
+  },
+  "institutional_holders": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "isin": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "live": {
+   "kind": "method",
+   "params": [
+    [
+     "message_handler",
+     "None"
+    ],
+    [
+     "verbose",
+     "True"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "major_holders": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "mutualfund_holders": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "投資信託の保有（EDINET に無い。大量保有報告書の保有者は独自の large_holders）"
+  },
+  "news": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "報道記事（EDINET に無い。提出書類は sec_filings）"
+  },
+  "option_chain": {
+   "kind": "method",
+   "params": [
+    [
+     "date",
+     "None"
+    ],
+    [
+     "tz",
+     "None"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "options": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "quarterly_balance_sheet": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "quarterly_balancesheet": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "quarterly_cash_flow": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "quarterly_cashflow": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "quarterly_earnings": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "Yahoo でも非推奨（常に None）。EPS の実績は income_stmt の Basic EPS"
+  },
+  "quarterly_financials": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "quarterly_income_stmt": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "quarterly_incomestmt": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "recommendations": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "recommendations_summary": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "revenue_estimate": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "sec_filings": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "shares": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "splits": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "sustainability": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "ESG スコア（EDINET に無い。温室効果ガスの排出量は独自の emissions ）"
+  },
+  "ttm_cash_flow": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "直近 12 か月（複数の書類にまたがる計算値で出典が 1 つに決まらない。freq='trailing' は空の表）"
+  },
+  "ttm_cashflow": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "直近 12 か月（複数の書類にまたがる計算値で出典が 1 つに決まらない。freq='trailing' は空の表）"
+  },
+  "ttm_financials": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "直近 12 か月（複数の書類にまたがる計算値で出典が 1 つに決まらない。freq='trailing' は空の表）"
+  },
+  "ttm_income_stmt": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "直近 12 か月（複数の書類にまたがる計算値で出典が 1 つに決まらない。freq='trailing' は空の表）"
+  },
+  "ttm_incomestmt": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "直近 12 か月（複数の書類にまたがる計算値で出典が 1 つに決まらない。freq='trailing' は空の表）"
+  },
+  "upgrades_downgrades": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "アナリストの予想・評価（EDINET に無い）"
+  },
+  "valuation": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  }
+ },
+ "Tickers": {
+  "download": {
+   "kind": "method",
+   "params": [
+    [
+     "period",
+     "'1mo if start & end None'"
+    ],
+    [
+     "interval",
+     "'1d'"
+    ],
+    [
+     "start",
+     "None"
+    ],
+    [
+     "end",
+     "None"
+    ],
+    [
+     "prepost",
+     "False"
+    ],
+    [
+     "actions",
+     "True"
+    ],
+    [
+     "auto_adjust",
+     "True"
+    ],
+    [
+     "repair",
+     "False"
+    ],
+    [
+     "threads",
+     "True"
+    ],
+    [
+     "group_by",
+     "'column'"
+    ],
+    [
+     "progress",
+     "True"
+    ],
+    [
+     "timeout",
+     "10"
+    ],
+    [
+     "kwargs",
+     null
+    ]
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "history": {
+   "kind": "method",
+   "params": [
+    [
+     "period",
+     "'1mo if start & end None'"
+    ],
+    [
+     "interval",
+     "'1d'"
+    ],
+    [
+     "start",
+     "None"
+    ],
+    [
+     "end",
+     "None"
+    ],
+    [
+     "prepost",
+     "False"
+    ],
+    [
+     "actions",
+     "True"
+    ],
+    [
+     "auto_adjust",
+     "True"
+    ],
+    [
+     "repair",
+     "False"
+    ],
+    [
+     "threads",
+     "True"
+    ],
+    [
+     "group_by",
+     "'column'"
+    ],
+    [
+     "progress",
+     "True"
+    ],
+    [
+     "timeout",
+     "10"
+    ],
+    [
+     "kwargs",
+     null
+    ]
+   ],
+   "jf": "absent",
+   "reason": "株価（EDINET に無い）"
+  },
+  "live": {
+   "kind": "method",
+   "params": [
+    [
+     "message_handler",
+     "None"
+    ],
+    [
+     "verbose",
+     "True"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "リアルタイムの株価（EDINET に無い）"
+  },
+  "news": {
+   "kind": "method",
+   "params": [],
+   "jf": "absent",
+   "reason": "報道記事（EDINET に無い）"
+  }
+ },
+ "Search": {
+  "all": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "lists": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "EDINET に無い"
+  },
+  "nav": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "EDINET に無い"
+  },
+  "news": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "EDINET に無い"
+  },
+  "quotes": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "research": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "EDINET に無い"
+  },
+  "response": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "search": {
+   "kind": "method",
+   "params": [],
+   "jf": "yahoo"
+  }
+ },
+ "Lookup": {
+  "all": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "cryptocurrency": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "EDINET に無い"
+  },
+  "currency": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "EDINET に無い"
+  },
+  "etf": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "future": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "EDINET に無い"
+  },
+  "get_all": {
+   "kind": "method",
+   "params": [
+    [
+     "count",
+     "25"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_cryptocurrency": {
+   "kind": "method",
+   "params": [
+    [
+     "count",
+     "25"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "EDINET に無い"
+  },
+  "get_currency": {
+   "kind": "method",
+   "params": [
+    [
+     "count",
+     "25"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "EDINET に無い"
+  },
+  "get_etf": {
+   "kind": "method",
+   "params": [
+    [
+     "count",
+     "25"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_future": {
+   "kind": "method",
+   "params": [
+    [
+     "count",
+     "25"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "EDINET に無い"
+  },
+  "get_index": {
+   "kind": "method",
+   "params": [
+    [
+     "count",
+     "25"
+    ]
+   ],
+   "jf": "absent",
+   "reason": "EDINET に無い"
+  },
+  "get_mutualfund": {
+   "kind": "method",
+   "params": [
+    [
+     "count",
+     "25"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "get_stock": {
+   "kind": "method",
+   "params": [
+    [
+     "count",
+     "25"
+    ]
+   ],
+   "jf": "yahoo"
+  },
+  "index": {
+   "kind": "property",
+   "jf": "absent",
+   "reason": "EDINET に無い"
+  },
+  "mutualfund": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "stock": {
+   "kind": "property",
+   "jf": "yahoo"
+  }
+ },
+ "FundsData": {
+  "asset_classes": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "bond_holdings": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "bond_ratings": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "description": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "equity_holdings": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "fund_operations": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "fund_overview": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "quote_type": {
+   "kind": "method",
+   "params": [],
+   "jf": "yahoo"
+  },
+  "sector_weightings": {
+   "kind": "property",
+   "jf": "yahoo"
+  },
+  "top_holdings": {
+   "kind": "property",
+   "jf": "yahoo"
+  }
+ },
+ "jfinance_own": {
+  "top_level": [
+   "DEFAULT_BASE_URL",
+   "EdinetQuery",
+   "FilingCalendar",
+   "JpIndustry",
+   "JpSector",
+   "NOTICE_CORRECTIONS",
+   "edinet_screen",
+   "get_base_url",
+   "set_base_url",
+   "set_financials_basis",
+   "set_financials_start"
+  ],
+  "Ticker": [
+   "audit_fees",
+   "dividend_resolutions",
+   "emissions",
+   "employees",
+   "filings",
+   "get_audit_fees",
+   "get_dividend_resolutions",
+   "get_emissions",
+   "get_employees",
+   "get_filings",
+   "get_fund_financials",
+   "get_jp_financials",
+   "get_large_holder_activity",
+   "get_large_holder_transactions",
+   "get_large_holders",
+   "get_large_holding_reports",
+   "get_major_shareholders",
+   "get_officer_compensation",
+   "get_officer_remuneration",
+   "get_officers",
+   "get_report_filing_dates",
+   "get_segments",
+   "get_statements",
+   "large_holder_activity",
+   "large_holder_transactions",
+   "large_holders",
+   "large_holding_reports",
+   "major_shareholders",
+   "min_fiscal_year",
+   "officer_compensation",
+   "officer_remuneration",
+   "officers",
+   "report_filing_dates",
+   "segments",
+   "statements"
+  ]
+ }
+}

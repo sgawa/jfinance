@@ -1,0 +1,27 @@
+name: 不具合 / Bug
+description: 例外が出る・返り値の形がおかしい
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        値そのものが違う場合は **データの誤り / Data problem** を使ってください。
+  - type: textarea
+    id: repro
+    attributes:
+      label: 再現するコード / Code that reproduces it
+      render: python
+    validations: { required: true }
+  - type: textarea
+    id: traceback
+    attributes:
+      label: 出力・traceback
+      render: text
+    validations: { required: true }
+  - type: input
+    id: versions
+    attributes:
+      label: jfinance と Python の版
+      placeholder: "jfinance 0.3.0 / Python 3.12 / macOS"
+    validations: { required: true }

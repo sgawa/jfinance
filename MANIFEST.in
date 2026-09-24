@@ -1,0 +1,12 @@
+# sdist に入れるもの（wheel はパッケージ src/jfinance だけ）
+# - tests/yf_api_reference.json: tests/test_api_compat.py が読む（無いと sdist からテストが走らない）
+# - tools/vendor_yfinance.py: yfinance のファイルに何をしたかの記録（Apache-2.0 4(b)）
+# - README.ja.md: README から参照している。**docs は別リポジトリへ移した**（https://jfnc.org/）
+include README.ja.md
+include CHANGELOG.md
+include tests/yf_api_reference.json
+include tools/vendor_yfinance.py
+# - licenses/: 金融庁「EDINETタクソノミの知的所有権について」の原文。
+#   応答に乗るラベルはタクソノミからの引用で、**本文書を一体で配ることが条件**。
+#   NOTICE から参照している。消さない
+graft licenses

@@ -1,0 +1,43 @@
+name: データの誤り / Data problem
+description: 値が違う・欠けている（サーバ側で直します）
+title: "[data] "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        値は `query1.jfnc.org` から来ます。**元の書類（EDINET）を根拠として**お書きください。
+        Values come from the server. Please point at the **original EDINET filing**.
+
+        先に確かめてください / Please check first:
+        EDINET の閲覧期間が満了した書類への訂正報告書は取得できないため、
+        古い年度は訂正前の値のままのことがあります（[data notes](../blob/main/docs/data_notes.md)）。
+  - type: input
+    id: symbol
+    attributes:
+      label: 記号 / Symbol
+      placeholder: "7203.T / E02144 / G02925"
+    validations: { required: true }
+  - type: input
+    id: attr
+    attributes:
+      label: どの属性・メソッド / Which attribute or method
+      placeholder: "t.financials / t.officer_compensation / t.get_statements()"
+    validations: { required: true }
+  - type: textarea
+    id: got
+    attributes:
+      label: 得られた値 / What you got
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待した値 / What you expected
+    validations: { required: true }
+  - type: input
+    id: evidence
+    attributes:
+      label: 根拠の書類 / The filing it comes from
+      description: EDINET の書類 ID（S100XXXX）か、disclosure2.edinet-fsa.go.jp の URL
+      placeholder: "S100YWGX"
+    validations: { required: true }

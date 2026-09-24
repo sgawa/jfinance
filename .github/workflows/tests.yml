@@ -1,0 +1,58 @@
+# 通信しない確認だけを走らせる。
+# jfinance のサーバ（query1.jfnc.org）に当たるテスト（tests/test_client.py・tests/test_output_compat.py）は
+# ここでは走らせない。1 つの IP から続けて叩くとレート制限に当たり、サーバにも負荷が掛かるため、手元で流す。
+name: tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  # 名前と引数の互換（yfinance の公開 API と比べる）・パッケージが入って import できること
+  api:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install .
+      - run: python tests/test_api_compat.py
+      - name: import できる（yfinance を読み込まないこと・依存が足りていること）
+        run: cd "$RUNNER_TEMP" && python -c "import jfinance, sys; print(jfinance.__version__); assert 'yfinance' not in sys.modules"
+
+  # コピーした yfinance のソースが tools/vendor_yfinance.py の指示どおりか
+  vendor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "yfinance==1.5.2"
+      - run: python tools/vendor_yfinance.py --check
+
+  # wheel と sdist が組めて、PyPI の確認が通ること。sdist からテストが走ること
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install build twine
+      - run: python -m build
+      - run: twine check dist/*
+      - name: sdist を展開してテストを流す
+        run: |
+          mkdir -p "$RUNNER_TEMP/sd" && tar xzf dist/*.tar.gz -C "$RUNNER_TEMP/sd" --strip-components=1
+          cd "$RUNNER_TEMP/sd" && pip install . && python tests/test_api_compat.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/*

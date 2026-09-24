@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 使い方の質問 / Questions about usage
+    url: https://github.com/sgawa/jfinance/discussions
+    about: 不具合ではない質問は Discussions へ。Issue ではなくこちらへお願いします
+  - name: ドキュメント / Documentation
+    url: https://github.com/sgawa/jfinance/blob/main/docs/index.md
+    about: 属性の一覧・yfinance との互換表・データについての注意
