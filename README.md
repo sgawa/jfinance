@@ -1,5 +1,11 @@
 # jfinance
 
+[![PyPI](https://img.shields.io/pypi/v/jfinance)](https://pypi.org/project/jfinance/)
+[![Downloads](https://img.shields.io/pypi/dm/jfinance)](https://pypistats.org/packages/jfinance)
+[![Tests](https://github.com/sgawa/jfinance/actions/workflows/tests.yml/badge.svg)](https://github.com/sgawa/jfinance/actions/workflows/tests.yml)
+[![License](https://img.shields.io/pypi/l/jfinance)](LICENSE)
+[![Python](https://img.shields.io/pypi/pyversions/jfinance)](https://pypi.org/project/jfinance/)
+
 jfinance is a Python library for retrieving corporate disclosure data filed with EDINET free
 of charge: financial statements, officers and their compensation, major shareholders, large
 shareholding reports and investment trusts. It covers annual, semi-annual and quarterly

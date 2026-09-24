@@ -1,5 +1,11 @@
 # jfinance
 
+[![PyPI](https://img.shields.io/pypi/v/jfinance)](https://pypi.org/project/jfinance/)
+[![Downloads](https://img.shields.io/pypi/dm/jfinance)](https://pypistats.org/packages/jfinance)
+[![Tests](https://github.com/sgawa/jfinance/actions/workflows/tests.yml/badge.svg)](https://github.com/sgawa/jfinance/actions/workflows/tests.yml)
+[![License](https://img.shields.io/pypi/l/jfinance)](LICENSE)
+[![Python](https://img.shields.io/pypi/pyversions/jfinance)](https://pypi.org/project/jfinance/)
+
 jfinance は、EDINET に提出された企業開示データ（財務諸表・役員と報酬・大株主・大量保有報告書・投資信託）を
 無料で取得するための Python ライブラリです。**2016 年度以降**の有価証券報告書・半期報告書・四半期報告書・
 大量保有報告書等を収録しています。API は yfinance 互換です。
@@ -12,7 +18,7 @@ jfinance は、EDINET に提出された企業開示データ（財務諸表・�
 pip install jfinance
 ```
 
-インストールせずに試せます: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sgawa/jfinance/blob/main/examples/quickstart.ipynb)
+インストールせずに試せます: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sgawa/jfinance/blob/main/examples/quickstart.ja.ipynb)
 
 Python 3.9 以上が必要です。`pandas`・`numpy`・`requests`・`pytz` は依存パッケージとして同時に導入されます。
 （`curl_cffi` が導入されている場合、そちらを使用します。）
