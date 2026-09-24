@@ -12,6 +12,8 @@ jfinance は、EDINET に提出された企業開示データ（財務諸表・�
 pip install jfinance
 ```
 
+インストールせずに試せます: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sgawa/jfinance/blob/main/examples/quickstart.ipynb)
+
 Python 3.9 以上が必要です。`pandas`・`numpy`・`requests`・`pytz` は依存パッケージとして同時に導入されます。
 （`curl_cffi` が導入されている場合、そちらを使用します。）
 

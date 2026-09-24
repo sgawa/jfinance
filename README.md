@@ -14,6 +14,8 @@ The API is yfinance-compatible.
 pip install jfinance
 ```
 
+Try it without installing anything: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sgawa/jfinance/blob/main/examples/quickstart.ipynb)
+
 Python 3.9 or later is required. `pandas`, `numpy`, `requests` and `pytz` are installed as
 dependencies. (Where `curl_cffi` is available, it is used instead.)
 
