@@ -1,0 +1,36 @@
+# 依存と Actions の版が上がったときに PR を立てる。
+#
+# ■ pip は「直接の依存」だけを見る
+#   pyproject.toml に書いた pandas・numpy・requests・pytz が対象。
+#   下限しか指定していないので、上がっても普通は PR は立たない。
+#   立つのは互換性が壊れる版が出たときで、そのときは知りたい。
+#
+# ■ 週 1 回にする
+#   毎日にすると PR が積もる。tests.yml が通れば取り込む、で足りる。
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Tokyo
+    commit-message:
+      prefix: "ci"
+    labels: ["dependencies"]
+
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Tokyo
+    commit-message:
+      prefix: "deps"
+    labels: ["dependencies"]
+    # yfinance は「コピー元の版を固定する」ためのもので、上げるのは
+    # tools/vendor_yfinance.py を通してからでないといけない。bot に上げさせない。
+    ignore:
+      - dependency-name: "yfinance"

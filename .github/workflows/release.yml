@@ -1,0 +1,71 @@
+# タグを打つと PyPI へ出す。
+#
+#   git tag v0.3.0 && git push origin v0.3.0
+#
+# ■ API トークンを置かない（Trusted Publishing）
+#   PyPI 側で「このリポジトリのこのワークフロー」を発行者として登録してあるので、
+#   GitHub が発行する短命の身分証（OIDC）だけで上げられる。
+#   秘密を保管しないので、漏れることも、更新を忘れることもない。
+#
+# ■ タグと版が食い違ったら出さない
+#   src/jfinance/version.py が正本。タグはそれに合わせる。
+#   食い違ったまま出すと、あとから直せない（PyPI は同じ版を上書きできない）。
+#
+# ■ 先に試験を通す
+#   tests.yml と同じ確認をここでも通してから出す。
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: タグと版が一致しているか
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          ver=$(python -c "import re,pathlib; \
+            print(re.search(r'version\s*=\s*[\"\x27]([^\"\x27]+)', \
+            pathlib.Path('src/jfinance/version.py').read_text()).group(1))")
+          echo "タグ $tag / version.py $ver"
+          [ "$tag" = "$ver" ] || { echo "::error::タグと version.py が違う"; exit 1; }
+
+      - run: pip install build twine
+      - run: python -m build
+      - run: twine check dist/*
+
+      - name: 組んだものが動くか（yfinance を読み込まないこと）
+        run: |
+          pip install dist/*.whl
+          cd "$RUNNER_TEMP"
+          python -c "import jfinance, sys; print(jfinance.__version__); assert 'yfinance' not in sys.modules"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/*
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: pypi        # PyPI 側の登録と合わせる
+    permissions:
+      id-token: write        # OIDC。これが Trusted Publishing の要
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - uses: pypa/gh-action-pypi-publish@release/v1
