@@ -4,6 +4,14 @@ Notable changes. This project uses [Semantic Versioning](https://semver.org/lang
 
 ## [Unreleased]
 
+## [0.3.1]
+
+Metadata only. No change to the code.
+
+### Changed
+- Author is `Sugawara`
+- Summary is "Japanese EDINET disclosure data API"
+
 ## [0.3.0]
 
 First public release.

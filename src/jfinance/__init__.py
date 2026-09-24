@@ -34,7 +34,7 @@ from .jp.sector import JpSector, JpIndustry
 from .jp.calendar import FilingCalendar
 
 __version__ = version.version
-__author__ = "jfinance contributors"
+__author__ = "Sugawara"
 
 import warnings
 warnings.filterwarnings('default', category=DeprecationWarning, module='^jfinance')

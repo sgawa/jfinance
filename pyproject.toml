@@ -4,15 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "jfinance"
-version = "0.3.0"
-description = "Japanese EDINET disclosure data with a yfinance-compatible API"
+version = "0.3.1"
+description = "Japanese EDINET disclosure data API"
 readme = "README.md"
 license = "Apache-2.0"
 # NOTICE に「本文書を一体で同梱している」と書いているので、**wheel にも入れる**。
 # 金融庁「EDINETタクソノミの知的所有権について」の条件（licenses/README を参照）
 license-files = ["LICENSE", "NOTICE", "licenses/EDINET_Taxonomy_Legal_Statement.txt"]
 requires-python = ">=3.9"
-authors = [{ name = "jfinance contributors" }]
+authors = [{ name = "Sugawara" }]
 keywords = ["edinet", "yfinance", "japan", "finance", "financial-statements", "xbrl"]
 dependencies = ["pandas>=1.5", "numpy>=1.16.5", "requests>=2.31", "pytz>=2022.5"]
 classifiers = [
