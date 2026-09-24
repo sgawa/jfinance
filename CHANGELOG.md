@@ -4,6 +4,21 @@ Notable changes. This project uses [Semantic Versioning](https://semver.org/lang
 
 ## [Unreleased]
 
+## [0.3.2]
+
+### Changed
+- Financial statement rows with no value at all are no longer returned. Yahoo's own
+  constructs (`Normalized EBITDA`, `Tax Effect Of Unusual Items` and the like) have no
+  source in a Japanese filing; returning them as empty rows left `financials` 80% `NaN`
+  for every company. `financials`, `balance_sheet`, `cashflow` and `get_jp_financials()`
+  now return only the line items the company actually discloses, in yfinance's order —
+  the same behaviour as yfinance against Yahoo.
+
+### Fixed
+- `examples/quickstart.ipynb` leads with `get_statements()`, which shows the filed
+  statements with their own hierarchy, and a Japanese notebook was added
+  (`examples/quickstart.ja.ipynb`)
+
 ## [0.3.1]
 
 Metadata only. No change to the code.

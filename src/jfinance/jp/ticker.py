@@ -136,7 +136,11 @@ class JpTickerMixin:
                     if v is not None:
                         table.setdefault(t[len(prefix):], {})[pd.Timestamp(p["asOfDate"])] = v
         df = pd.DataFrame(table).T if table else pd.DataFrame()
-        df = df.reindex([k for k in keys if k in table] + [k for k in keys if k not in table])
+        # 値がまったく無いキーは行に出さない（並びは keys のまま）。
+        # 以前は空の行を後ろに並べていたが、業種で使う科目が違うため
+        # （銀行・保険の 14 項目など）、どの会社でも半分が空欄になっていた。
+        # 何を返しうるかは docs の「財務項目のキー」で見られる
+        df = df.reindex([k for k in keys if k in table])
         if len(df.columns):
             df = df[sorted(df.columns, reverse=True)]
         return df
