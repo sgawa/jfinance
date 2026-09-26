@@ -52,7 +52,7 @@ jobs:
           cd "$RUNNER_TEMP"
           python -c "import jfinance, sys; print(jfinance.__version__); assert 'yfinance' not in sys.modules"
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: dist
           path: dist/*
